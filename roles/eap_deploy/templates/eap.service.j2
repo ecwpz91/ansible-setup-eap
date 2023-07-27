@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch JBoss Enterprise Application Platform.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash {{ eap_archive_dest }}/jboss-eap-7.4/bin/standalone.sh
+
+[Install]
+WantedBy=multi-user.target

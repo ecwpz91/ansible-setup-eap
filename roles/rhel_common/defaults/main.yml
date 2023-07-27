@@ -1,0 +1,10 @@
+---
+
+#---------------------------------------------------
+# Subscription Manager
+#---------------------------------------------------
+# rhsm_user_name: "{{ rhsm_user_name | default(myrhsmusername) }}"
+# rhsm_user_pass: "{{ rhsm_user_pass | default(myrhsmuserpass) }}"
+# rhsm_pool_id: "{{ rhsm_pool_id | default(myrhsmpoolid) }}"
+rhsm_key_id: "{{ rhsm_key_id | default(myrhsmkeyid) }}"
+rhsm_org_id: "{{ rhsm_org_id | default(myrhsmorgid) }}"

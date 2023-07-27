@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+  ServerName {{ inventory_hostname }}.fios-router.home
+  ServerAlias {{ inventory_hostname }}.*
+  ProxyRequests Off
+  ProxyPreserveHost On
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+  ProxyPass /mta-ui http://localhost:8080/mta-ui
+  ProxyPassReverse /mta-ui http://localhost:8080/mta-ui
+  <Location /mta-ui>
+    Order allow,deny
+    Allow from all
+  </Location>
+  ProxyPass /auth http://localhost:8080/auth
+  ProxyPassReverse /mta-ui http://localhost:8080/auth
+  <Location /auth>
+    Order allow,deny
+    Allow from all
+  </Location>
+</VirtualHost>
